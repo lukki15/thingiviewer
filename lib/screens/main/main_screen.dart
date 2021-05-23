@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thingiviewer/components/side_menu.dart';
 import 'package:thingiviewer/responsive.dart';
 import 'package:thingiviewer/screens/email/email_screen.dart';
-import 'package:thingiviewer/screens/list_of_emails/list_of_emails_screen.dart';
+import 'package:thingiviewer/screens/list_of_things/list_of_things.dart';
 import 'package:thingiviewer/models/Email.dart';
 
 class MainScreen extends StatelessWidget {
@@ -13,12 +13,12 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       body: Responsive(
         // Let's work on our mobile part
-        mobile: ListOfEmails(),
+        mobile: ListOfThings(),
         tablet: Row(
           children: [
             Expanded(
               flex: 6,
-              child: ListOfEmails(),
+              child: ListOfThings(),
             ),
             Expanded(
                 flex: 9,
@@ -34,7 +34,7 @@ class MainScreen extends StatelessWidget {
             Expanded(flex: _size.width > 1340 ? 2 : 4, child: SideMenu()),
             Expanded(
               flex: _size.width > 1340 ? 3 : 5,
-              child: ListOfEmails(),
+              child: ListOfThings(),
             ),
             Expanded(
                 flex: _size.width > 1340 ? 8 : 10,
